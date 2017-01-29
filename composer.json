@@ -1,0 +1,44 @@
+{
+    "name": "liftoff/meta",
+    "description": "A collection of classes to generate module meta information for the MonkCMS API",
+    "type": "library",
+    "keywords": ["monk", "monkdev", "monkcms", "cms", "ekklesia", "ekklesia360"],
+    "homepage": "https://liftoff.ekklesia360.com",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Monk Development, Inc.",
+        "homepage": "http://monkdev.com",
+        "role": "Developer"
+      }
+    ],
+    "support": {
+      "contact": "support@monkdevelopment.com"
+    },
+    "autoload": {
+      "psr-4": {
+        "Meta\\": "lib/Meta/"
+      }
+    },
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+      "phpdocumentor/phpdocumentor": "~2.9.0",
+      "phploc/phploc": "~3.0.1",
+      "phpmd/phpmd": "~2.5.0",
+      "sebastian/phpcpd": "~2.0.4",
+      "sensiolabs/security-checker": "~4.0.0",
+      "squizlabs/php_codesniffer": "~2.7.1"
+    },
+    "scripts": {
+      "phpcpd": "phpcpd lib/",
+      "phpcs": "phpcs --standard=PSR2 lib/ tests/",
+      "phpdoc": "phpdoc",
+      "phplint": "php -l lib/**/*",
+      "phploc": "phploc lib/",
+      "phpmd": "phpmd lib/ text cleancode,codesize,controversial,design,naming,unusedcode",
+      "quality": ["@phplint", "@phpcs", "@phpcpd", "@phploc", "@phpmd", "@security-checker"],
+      "security-checker": "security-checker security:check"
+    }
+}

@@ -1,0 +1,12 @@
+composer.lock
+phpdoc.xml
+phpunit.xml
+doc/
+vendor/
+.htaccess
+index.php
+monkcache.db
+monkcms.php
+monkcode.txt
+monkimage.php
+tests/
