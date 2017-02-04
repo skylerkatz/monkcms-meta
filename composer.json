@@ -27,6 +27,7 @@
       "phpdocumentor/phpdocumentor": "~2.9.0",
       "phploc/phploc": "~3.0.1",
       "phpmd/phpmd": "~2.5.0",
+      "phpunit/phpunit": "~5.7.5",
       "sebastian/phpcpd": "~2.0.4",
       "sensiolabs/security-checker": "~4.0.0",
       "squizlabs/php_codesniffer": "~2.7.1"
@@ -39,6 +40,7 @@
       "phploc": "phploc lib/",
       "phpmd": "phpmd lib/ text cleancode,codesize,controversial,design,naming,unusedcode",
       "quality": ["@phplint", "@phpcs", "@phpcpd", "@phploc", "@phpmd", "@security-checker"],
-      "security-checker": "security-checker security:check"
+      "security-checker": "security-checker security:check",
+      "test": "phpunit"
     }
 }
