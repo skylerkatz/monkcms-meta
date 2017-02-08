@@ -28,6 +28,18 @@ class PageMeta extends Meta implements MetaInterface
     protected $headerImage;
 
     /**
+     * Website Name
+     * @var string
+     */
+    protected $siteName;
+
+    /**
+     * Url of the Page
+     * @var string
+     */
+    protected $eventUrl;
+
+    /**
      * Get the requested page content and associated header image
      * @param string $pageId Page to get from MonkCMS
      * @param string $siteName The name of the website
