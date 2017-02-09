@@ -4,8 +4,11 @@ phpunit.xml
 doc/
 vendor/
 .htaccess
-index.php
 monkcache.db
 monkcms.php
 monkcode.txt
 monkimage.php
+ekk_eventpage.php
+ekk_sermonpage.php
+mcms_sermons.php
+index.php

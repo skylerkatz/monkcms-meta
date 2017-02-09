@@ -22,6 +22,28 @@ function getContent(...$args)
             ]
         ];
     }
+    if ($args[0] == 'event') {
+        return [
+            'show'=>
+            [
+                'title' => 'Example Event Title',
+                'description' => 'Example Event Description',
+                'category' => 'Example Event Keywords',
+                'imageurl' => 'http://www.placecage.com/1200/630'
+            ]
+        ];
+    }
+    if ($args[0] == 'sermon') {
+        return [
+            'show'=>
+            [
+                'title' => 'Example Sermon Title',
+                'summary' => 'Example Sermon Description',
+                'tags' => 'Example Sermon Keywords',
+                'imageurl' => 'http://www.placecage.com/1200/630'
+            ]
+        ];
+    }
     if ($args[0] == 'media') {
         return [
             'show'=>
