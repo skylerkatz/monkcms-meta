@@ -72,7 +72,9 @@ class ArticleMeta extends Meta implements MetaInterface
             return $this->churchCallsArticles . " | " . $this->siteName;
         }
 
-        return $this->sanitize($this->article['show']['title'] . " | " . $this->siteName);
+        return $this->sanitize(
+            $this->article['show']['title'] . " | " . $this->churchCallsArticles . " | " . $this->siteName
+        );
     }
 
     /**

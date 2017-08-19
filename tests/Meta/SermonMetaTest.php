@@ -11,7 +11,7 @@ class SermonMetaTest extends TestCase
     {
         $meta = new SermonMeta('test-sermon-slug', 'Test Site Name', 'http://example.com');
 
-        $this->assertEquals('Example Sermon Title | Test Site Name', $meta->title());
+        $this->assertEquals('Example Sermon Title | Sermons | Test Site Name', $meta->title());
     }
 
     /** @test */
@@ -38,7 +38,7 @@ class SermonMetaTest extends TestCase
         $expectedResponse = implode([
             '<meta property="og:site_name" content="Test Site Name" >' . PHP_EOL,
             '<meta property="og:type" content="article" >' . PHP_EOL,
-            '<meta property="og:title" content="Example Sermon Title | Test Site Name" >' . PHP_EOL,
+            '<meta property="og:title" content="Example Sermon Title | Sermons | Test Site Name" >' . PHP_EOL,
             '<meta property="og:url" content="http://example.com" >' . PHP_EOL,
             '<meta property="og:image" content="http://www.placecage.com/1200/630" >' . PHP_EOL,
             '<meta property="og:image:width" content="1200" >' . PHP_EOL,

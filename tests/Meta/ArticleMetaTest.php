@@ -11,7 +11,7 @@ class ArticleMetaTest extends TestCase
     {
         $meta = new ArticleMeta('test-article-slug', 'Test Site Name', 'http://example.com');
 
-        $this->assertEquals('Example Article Title | Test Site Name', $meta->title());
+        $this->assertEquals('Example Article Title | Articles | Test Site Name', $meta->title());
     }
 
     /** @test */
@@ -38,7 +38,7 @@ class ArticleMetaTest extends TestCase
         $expectedResponse = implode([
             '<meta property="og:site_name" content="Test Site Name" >' . PHP_EOL,
             '<meta property="og:type" content="article" >' . PHP_EOL,
-            '<meta property="og:title" content="Example Article Title | Test Site Name" >' . PHP_EOL,
+            '<meta property="og:title" content="Example Article Title | Articles | Test Site Name" >' . PHP_EOL,
             '<meta property="og:url" content="http://example.com" >' . PHP_EOL,
             '<meta property="og:image" content="http://www.placecage.com/1200/630" >' . PHP_EOL,
             '<meta property="og:image:width" content="1200" >' . PHP_EOL,

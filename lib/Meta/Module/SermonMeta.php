@@ -72,7 +72,9 @@ class SermonMeta extends Meta implements MetaInterface
             return $this->churchCallsSermons . " | " . $this->siteName;
         }
 
-        return $this->sanitize($this->sermon['show']['title'] . " | " . $this->siteName);
+        return $this->sanitize(
+            $this->sermon['show']['title'] . " | " . $this->churchCallsSermons . " | " . $this->siteName
+        );
     }
 
     /**
