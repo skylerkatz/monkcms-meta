@@ -44,6 +44,17 @@ function getContent(...$args)
             ]
         ];
     }
+    if ($args[0] == 'article') {
+        return [
+            'show'=>
+            [
+                'title' => 'Example Article Title',
+                'summary' => 'Example Article Description',
+                'tags' => 'Example Article Keywords',
+                'imageurl' => 'http://www.placecage.com/1200/630'
+            ]
+        ];
+    }
     if ($args[0] == 'media') {
         return [
             'show'=>
