@@ -49,7 +49,7 @@ class SermonMeta extends Meta implements MetaInterface
      * Get the sermon and associated data from the MonkCMS Api
      * @param string $sermonType         Either Auto for display:auto or the slug of the sermon to find
      * @param string $siteName           The name of the website
-     * @param string $sermonUrl          he current URL of the sermon
+     * @param string $sermonUrl          The current URL of the sermon
      * @param string $churchCallsSermons Optional parameter for what to call sermons
      */
     public function __construct($sermonType, $siteName, $sermonUrl, $churchCallsSermons = 'Sermons')
@@ -116,7 +116,7 @@ class SermonMeta extends Meta implements MetaInterface
             'description' => $this->description(),
         ];
 
-        if ($this->sermonImage !== null) {
+        if (! is_null($this->sermonImage)) {
             $meta['image'] = $this->sermonImage;
         }
 
@@ -144,7 +144,7 @@ class SermonMeta extends Meta implements MetaInterface
 
     /**
      * Get the sermon based on the type of template
-     * @param  string $sermonType display:auto vs display:detail
+     * @param  string $sermonType Either auto for display:auto or the slug of the sermon to find
      * @return array Sermon Content from the MonkCMS Api
      */
     private function getSermon($sermonType)
