@@ -3,65 +3,72 @@
 /**
  * Global Meta namespace.
  */
+
 namespace Meta\Module;
 
 use Meta\Meta;
 use Meta\MetaInterface;
 
 /**
- * A class to generate HTML Meta information for the MonkCMS Pages Module
+ * A class to generate HTML Meta information for the MonkCMS Pages Module.
  *
  * @author Monk Development, Inc.
  */
 class PageMeta extends Meta implements MetaInterface
 {
     /**
-     * Page Content
+     * Page Content.
+     *
      * @var array
      */
     protected $page;
 
     /**
-     * Page Header Image
+     * Page Header Image.
+     *
      * @var array
      */
     protected $headerImage;
 
     /**
-     * Website Name
+     * Website Name.
+     *
      * @var string
      */
     protected $siteName;
 
     /**
-     * Url of the Page
+     * Url of the Page.
+     *
      * @var string
      */
     protected $eventUrl;
 
     /**
-     * Get the requested page content and associated header image
-     * @param string $pageId Page to get from MonkCMS
+     * Get the requested page content and associated header image.
+     *
+     * @param string $pageId   Page to get from MonkCMS
      * @param string $siteName The name of the website
-     * @param string $pageUrl The current URL of the page
+     * @param string $pageUrl  The current URL of the page
      */
     public function __construct($pageId, $siteName, $pageUrl)
     {
-        $this->page = getContent("page", "display:detail", "find:{$pageId}", "json");
+        $this->page = getContent('page', 'display:detail', "find:{$pageId}", 'json');
         $this->headerImage = getContent(
-            "media",
-            "display:detail",
+            'media',
+            'display:detail',
             "find:{$pageId}",
-            "label:header",
+            'label:header',
             "show:__imageurl width='1200' height='630'__",
-            "json"
+            'json'
         );
         $this->siteName = $siteName;
         $this->pageUrl = $pageUrl;
     }
 
     /**
-     * Get the title and add the site name
+     * Get the title and add the site name.
+     *
      * @return string Title tag
      */
     public function title()
@@ -70,12 +77,13 @@ class PageMeta extends Meta implements MetaInterface
             return $this->siteName;
         }
 
-        return $this->sanitize($this->page['show']['title'] . " | ". $this->siteName);
+        return $this->sanitize($this->page['show']['title'].' | '.$this->siteName);
     }
 
     /**
      * Get the description of the page
-     * If no description use the site name
+     * If no description use the site name.
+     *
      * @return string Page description
      */
     public function description()
@@ -88,7 +96,8 @@ class PageMeta extends Meta implements MetaInterface
     }
 
     /**
-     * Get the keywords for the page
+     * Get the keywords for the page.
+     *
      * @return string Page keywords
      */
     public function keywords()
@@ -98,15 +107,16 @@ class PageMeta extends Meta implements MetaInterface
 
     /**
      * Get the Social Media Tags for the page.
+     *
      * @return string Meta tags for social media sharing
      */
     public function socialTags()
     {
         $meta = [
-            'name' => $this->siteName,
-            'type' => 'article',
-            'title' => $this->title(),
-            'url' => $this->pageUrl,
+            'name'        => $this->siteName,
+            'type'        => 'article',
+            'title'       => $this->title(),
+            'url'         => $this->pageUrl,
             'description' => $this->description(),
         ];
         if (isset($this->headerImage['show']['imageurl'])) {

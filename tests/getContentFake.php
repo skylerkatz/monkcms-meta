@@ -14,53 +14,48 @@ function getContent(...$args)
 {
     if ($args[0] == 'page') {
         return [
-            'show'=>
-            [
-                'title' => 'Example Page Title',
+            'show'=> [
+                'title'       => 'Example Page Title',
                 'description' => 'Example Page Description',
-                'tags' => 'Example Page Keywords'
-            ]
+                'tags'        => 'Example Page Keywords',
+            ],
         ];
     }
     if ($args[0] == 'event') {
         return [
-            'show'=>
-            [
-                'title' => 'Example Event Title',
+            'show'=> [
+                'title'       => 'Example Event Title',
                 'description' => 'Example Event Description',
-                'category' => 'Example Event Keywords',
-                'imageurl' => 'http://www.placecage.com/1200/630'
-            ]
+                'category'    => 'Example Event Keywords',
+                'imageurl'    => 'http://www.placecage.com/1200/630',
+            ],
         ];
     }
     if ($args[0] == 'sermon') {
         return [
-            'show'=>
-            [
-                'title' => 'Example Sermon Title',
-                'summary' => 'Example Sermon Description',
-                'tags' => 'Example Sermon Keywords',
-                'imageurl' => 'http://www.placecage.com/1200/630'
-            ]
+            'show'=> [
+                'title'    => 'Example Sermon Title',
+                'summary'  => 'Example Sermon Description',
+                'tags'     => 'Example Sermon Keywords',
+                'imageurl' => 'http://www.placecage.com/1200/630',
+            ],
         ];
     }
     if ($args[0] == 'article') {
         return [
-            'show'=>
-            [
-                'title' => 'Example Article Title',
-                'summary' => 'Example Article Description',
-                'tags' => 'Example Article Keywords',
-                'imageurl' => 'http://www.placecage.com/1200/630'
-            ]
+            'show'=> [
+                'title'    => 'Example Article Title',
+                'summary'  => 'Example Article Description',
+                'tags'     => 'Example Article Keywords',
+                'imageurl' => 'http://www.placecage.com/1200/630',
+            ],
         ];
     }
     if ($args[0] == 'media') {
         return [
-            'show'=>
-            [
-                'imageurl' => 'http://www.placecage.com/1200/630'
-            ]
+            'show'=> [
+                'imageurl' => 'http://www.placecage.com/1200/630',
+            ],
         ];
     }
 }

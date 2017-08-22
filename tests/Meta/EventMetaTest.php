@@ -1,8 +1,9 @@
 <?php
+
 namespace Tests\Meta;
 
+use Meta\Module\EventMeta;
 use PHPUnit\Framework\TestCase;
-use \Meta\Module\EventMeta;
 
 class EventMetaTest extends TestCase
 {
@@ -36,14 +37,14 @@ class EventMetaTest extends TestCase
         $meta = new EventMeta('test-event-slug', 'Test Site Name', 'http://example.com');
 
         $expectedResponse = implode([
-            '<meta property="og:site_name" content="Test Site Name" >' . PHP_EOL,
-            '<meta property="og:type" content="article" >' . PHP_EOL,
-            '<meta property="og:title" content="Example Event Title | Test Site Name" >' . PHP_EOL,
-            '<meta property="og:url" content="http://example.com" >' . PHP_EOL,
-            '<meta property="og:image" content="http://www.placecage.com/1200/630" >' . PHP_EOL,
-            '<meta property="og:image:width" content="1200" >' . PHP_EOL,
-            '<meta property="og:image:height" content="630" >' . PHP_EOL,
-            '<meta name="twitter:card" content="summary_large_image" >' . PHP_EOL
+            '<meta property="og:site_name" content="Test Site Name" >'.PHP_EOL,
+            '<meta property="og:type" content="article" >'.PHP_EOL,
+            '<meta property="og:title" content="Example Event Title | Test Site Name" >'.PHP_EOL,
+            '<meta property="og:url" content="http://example.com" >'.PHP_EOL,
+            '<meta property="og:image" content="http://www.placecage.com/1200/630" >'.PHP_EOL,
+            '<meta property="og:image:width" content="1200" >'.PHP_EOL,
+            '<meta property="og:image:height" content="630" >'.PHP_EOL,
+            '<meta name="twitter:card" content="summary_large_image" >'.PHP_EOL,
         ]);
 
         $this->assertEquals($expectedResponse, $meta->socialTags());
