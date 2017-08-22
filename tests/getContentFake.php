@@ -53,25 +53,23 @@ function getContent(...$args)
     }
     if ($args[0] == 'blog') {
         return [
-            'before_show_postlist'=>
-            [
-                'blogtitle' => 'Example Blog',
-                'blogdescription' => 'Example Blog Description'
-            ]
+            'before_show_postlist'=> [
+                'blogtitle'       => 'Example Blog',
+                'blogdescription' => 'Example Blog Description',
+            ],
         ];
     }
     if ($args[0] == 'blogpost') {
         return [
-            'show_detail'=>
-            [
-                'blogtitle' => 'Example Blog',
+            'show_detail'=> [
+                'blogtitle'     => 'Example Blog',
                 'blogposttitle' => 'A Blog Post Title',
-                'summary' => 'A blog post summary',
-                'preview' => 'A preview of the blog post...',
-                'tags' => 'Example Blog Post Tags',
-                'imageurl' => 'http://www.placecage.com/1200/630',
-                'blogauthor' => 'Jane Doe'
-            ]
+                'summary'       => 'A blog post summary',
+                'preview'       => 'A preview of the blog post...',
+                'tags'          => 'Example Blog Post Tags',
+                'imageurl'      => 'http://www.placecage.com/1200/630',
+                'blogauthor'    => 'Jane Doe',
+            ],
         ];
     }
     if ($args[0] == 'media') {
