@@ -1,14 +1,19 @@
 {
-    "name": "liftoff/meta",
+    "name": "monkcms/meta",
     "description": "A collection of classes to generate module meta information for the MonkCMS API",
     "type": "library",
     "keywords": ["monk", "monkdev", "monkcms", "cms", "ekklesia", "ekklesia360"],
-    "homepage": "https://liftoff.ekklesia360.com",
+    "homepage": "http://liftoff.ekklesia360.com",
     "license": "MIT",
     "authors": [
       {
         "name": "Monk Development, Inc.",
         "homepage": "http://monkdev.com",
+        "role": "Developer"
+      },
+      {
+        "name": "Skyler Katz",
+        "homepage": "http://about.me/skylerkatz",
         "role": "Developer"
       }
     ],
