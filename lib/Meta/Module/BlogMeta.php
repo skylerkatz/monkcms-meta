@@ -88,11 +88,12 @@ class BlogMeta extends Meta implements MetaInterface
         }
 
         if (isset($this->blog['show_detail'])) {
-            $description = implode(' | ', array(
+            $description = implode(' | ', [
                 $this->blog['show_detail']['blogposttitle'],
                 $this->blog['show_detail']['blogtitle'],
-                $this->siteName
-            ));
+                $this->siteName,
+            ]);
+
             return $this->sanitize(
                 $description
             );
@@ -178,7 +179,7 @@ class BlogMeta extends Meta implements MetaInterface
     }
 
     /**
-     * Get the image for the blog/post
+     * Get the image for the blog/post.
      *
      * @return string The URL of the given post or blog
      */
