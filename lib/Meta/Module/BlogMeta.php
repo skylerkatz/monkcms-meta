@@ -102,7 +102,7 @@ class BlogMeta extends Meta implements MetaInterface
     public function description()
     {
         if (isset($this->blog['before_show_postlist'])) {
-            if (array_key_exists('blogdescription', $this->blog['before_show_postlist'])) {
+            if ($this->blog['before_show_postlist']['blogdescription'] != '') {
                 return $this->sanitize(
                     $this->blog['before_show_postlist']['blogdescription']
                 );
