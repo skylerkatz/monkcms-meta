@@ -67,7 +67,7 @@ class BlogMeta extends Meta implements MetaInterface
             'label:header',
             "show:__imageurl width='1200' height='630'__",
             'json'
-        );
+        )['show']['imageurl'];
         $this->siteName = $siteName;
         $this->blogUrl = $blogUrl;
     }
@@ -99,7 +99,21 @@ class BlogMeta extends Meta implements MetaInterface
      */
     public function description()
     {
-        throw new \Exception('Method not implemented');
+        if (isset($this->blog['before_show_postlist'])) {
+            if (array_key_exists('blogdescription', $this->blog['before_show_postlist'])) {
+                return $this->sanitize(
+                    $this->blog['before_show_postlist']['blogdescription']
+                );
+            } else {
+                return $this->sanitize("A blog for {$this->siteName}");
+            }
+        }
+
+        if (isset($this->blog['show_detail'])) {
+            return $this->sanitize(
+                $this->blog['show_detail']['preview']
+            );
+        }
     }
 
     /**
@@ -109,7 +123,11 @@ class BlogMeta extends Meta implements MetaInterface
      */
     public function keywords()
     {
-        throw new \Exception('Method not implemented');
+        if (isset($this->blog['show_detail']['tags'])) {
+            return $this->sanitize($this->blog['show_detail']['tags']);
+        }
+
+        return '';
     }
 
     /**
@@ -119,6 +137,40 @@ class BlogMeta extends Meta implements MetaInterface
      */
     public function socialTags()
     {
-        throw new \Exception('Method not implemented');
+        $meta = [
+            'name'        => $this->siteName,
+            'type'        => 'article',
+            'title'       => $this->title(),
+            'url'         => $this->blogUrl,
+            'description' => $this->description(),
+        ];
+
+        if ($this->imageExists()) {
+            $meta['image'] = $this->getProperImage();
+        }
+
+        return $this->generateSocialTags($meta);
+    }
+
+    protected function imageExists()
+    {
+        if (isset($this->blog['show_detail']) && $this->blog['show_detail']['imageurl'] != '') {
+            return true;
+        }
+
+        if (!is_null($this->blogImage)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    protected function getProperImage()
+    {
+        if (isset($this->blog['show_detail'])) {
+            return $this->blog['show_detail']['imageurl'];
+        }
+
+        return $this->blogImage;
     }
 }

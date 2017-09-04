@@ -55,7 +55,7 @@ function getContent(...$args)
         return [
             'before_show_postlist'=> [
                 'blogtitle'       => 'Example Blog',
-                'blogdescription' => 'Example Blog Description',
+                'blogdescription' => 'Example Description of a blog',
             ],
         ];
     }
@@ -64,10 +64,9 @@ function getContent(...$args)
             'show_detail'=> [
                 'blogtitle'     => 'Example Blog',
                 'blogposttitle' => 'A Blog Post Title',
-                'summary'       => 'A blog post summary',
                 'preview'       => 'A preview of the blog post...',
                 'tags'          => 'Example Blog Post Tags',
-                'imageurl'      => 'http://www.placecage.com/1200/630',
+                'imageurl'      => 'http://www.fillmurray.com/1200/630',
                 'blogauthor'    => 'Jane Doe',
             ],
         ];
