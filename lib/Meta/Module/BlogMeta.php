@@ -47,10 +47,10 @@ class BlogMeta extends Meta implements MetaInterface
     /**
      * Get the requested blog content and associated header image.
      *
-     * @param string $siteName The name of the website
-     * @param string $blogUrl  The current URL of the blog/blog post
-     * @param string $churchCallsBlog  Optional parameter for what to call a blog
-     * @param string $apiType  Used during testing to simulate a blog post.
+     * @param string $siteName        The name of the website
+     * @param string $blogUrl         The current URL of the blog/blog post
+     * @param string $churchCallsBlog Optional parameter for what to call a blog
+     * @param string $apiType         Used during testing to simulate a blog post.
      */
     public function __construct($siteName, $blogUrl, $churchCallsBlog = 'blog', $apiType = 'blog')
     {
