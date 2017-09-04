@@ -21,7 +21,7 @@ class BlogMetaTest extends TestCase
     {
         // MonkCMS dynamically gets the name of the blog based on the blog slug
         // Passing through a fake api type for testing only
-        $meta = new BlogMeta('Test Site Name', 'http://example.com/example-blog/a-blog-post-title', 'blogpost');
+        $meta = new BlogMeta('Test Site Name', 'http://example.com/example-blog/a-blog-post-title', 'blog', 'blogpost');
 
         $this->assertEquals('A Blog Post Title | Example Blog | Test Site Name', $meta->title());
     }
@@ -37,7 +37,7 @@ class BlogMetaTest extends TestCase
     /** @test */
     public function aProperlyFormattedDescriptionIsReturnedForABlogPost()
     {
-        $meta = new BlogMeta('Test Site Name', 'http://example.com/example-blog/a-blog-post-title', 'blogpost');
+        $meta = new BlogMeta('Test Site Name', 'http://example.com/example-blog/a-blog-post-title', 'blog', 'blogpost');
 
         $this->assertEquals('A preview of the blog post...', $meta->description());
     }
@@ -45,7 +45,7 @@ class BlogMetaTest extends TestCase
     /** @test */
     public function properlyFormattedKeywordsAreReturnedForABlogPost()
     {
-        $meta = new BlogMeta('Test Site Name', 'http://example.com/example-blog/a-blog-post-title', 'blogpost');
+        $meta = new BlogMeta('Test Site Name', 'http://example.com/example-blog/a-blog-post-title', 'blog', 'blogpost');
 
         $this->assertEquals('Example Blog Post Tags', $meta->keywords());
     }
@@ -72,7 +72,7 @@ class BlogMetaTest extends TestCase
     /** @test */
     public function properlyFormattedSocialTagsAreReturnedForABlogPost()
     {
-        $meta = new BlogMeta('Test Site Name', 'http://example.com/example-blog/a-blog-post-title', 'blogpost');
+        $meta = new BlogMeta('Test Site Name', 'http://example.com/example-blog/a-blog-post-title', 'blog', 'blogpost');
 
         $expectedResponse = implode([
             '<meta property="og:site_name" content="Test Site Name" >'.PHP_EOL,

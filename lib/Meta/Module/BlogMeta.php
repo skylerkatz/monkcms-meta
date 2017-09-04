@@ -49,9 +49,10 @@ class BlogMeta extends Meta implements MetaInterface
      *
      * @param string $siteName The name of the website
      * @param string $blogUrl  The current URL of the blog/blog post
+     * @param string $churchCallsBlog  Optional parameter for what to call a blog
      * @param string $apiType  Used during testing to simulate a blog post.
      */
-    public function __construct($siteName, $blogUrl, $apiType = 'blog')
+    public function __construct($siteName, $blogUrl, $churchCallsBlog = 'blog', $apiType = 'blog')
     {
         $this->blog = getContent(
             $apiType,
@@ -70,6 +71,7 @@ class BlogMeta extends Meta implements MetaInterface
         )['show']['imageurl'];
         $this->siteName = $siteName;
         $this->blogUrl = $blogUrl;
+        $this->churchCallsBlog = $churchCallsBlog;
     }
 
     /**
@@ -105,7 +107,7 @@ class BlogMeta extends Meta implements MetaInterface
                     $this->blog['before_show_postlist']['blogdescription']
                 );
             } else {
-                return $this->sanitize("A blog for {$this->siteName}");
+                return $this->sanitize("A {$this->churchCallsBlog} for {$this->siteName}");
             }
         }
 
