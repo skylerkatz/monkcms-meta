@@ -88,8 +88,13 @@ class BlogMeta extends Meta implements MetaInterface
         }
 
         if (isset($this->blog['show_detail'])) {
+            $description = implode(' | ', array(
+                $this->blog['show_detail']['blogposttitle'],
+                $this->blog['show_detail']['blogtitle'],
+                $this->siteName
+            ));
             return $this->sanitize(
-                $this->blog['show_detail']['blogposttitle'].' | '.$this->blog['show_detail']['blogtitle'].' | '.$this->siteName
+                $description
             );
         }
     }
@@ -106,9 +111,9 @@ class BlogMeta extends Meta implements MetaInterface
                 return $this->sanitize(
                     $this->blog['before_show_postlist']['blogdescription']
                 );
-            } else {
-                return $this->sanitize("A {$this->churchCallsBlog} for {$this->siteName}");
             }
+
+            return $this->sanitize("A {$this->churchCallsBlog} for {$this->siteName}");
         }
 
         if (isset($this->blog['show_detail'])) {
@@ -154,7 +159,12 @@ class BlogMeta extends Meta implements MetaInterface
         return $this->generateSocialTags($meta);
     }
 
-    protected function imageExists()
+    /**
+     * Determine if an image exists.
+     *
+     * @return bool returns true if an image exists for the given blog/post
+     */
+    private function imageExists()
     {
         if (isset($this->blog['show_detail']) && $this->blog['show_detail']['imageurl'] != '') {
             return true;
@@ -167,7 +177,12 @@ class BlogMeta extends Meta implements MetaInterface
         return false;
     }
 
-    protected function getProperImage()
+    /**
+     * Get the image for the blog/post
+     *
+     * @return string The URL of the given post or blog
+     */
+    private function getProperImage()
     {
         if (isset($this->blog['show_detail'])) {
             return $this->blog['show_detail']['imageurl'];
