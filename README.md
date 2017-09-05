@@ -13,7 +13,7 @@ $currentUrl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $meta = new \Meta\Module\PageMeta(
     $_GET['nav'],
     getSiteName(),
-    'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']
+    $currentUrl
 );
 ```
 
