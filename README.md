@@ -1,6 +1,6 @@
 # MonkCMS-Meta
 [![Latest Stable Version](https://img.shields.io/packagist/v/monkcms/meta.svg?style=flat-square)](https://packagist.org/packages/monkcms/meta)
-[![Build Status](https://img.shields.io/travis/skylerkatz/monkcms-meta/master.svg?style=flat=square)](https://travis-ci.org/skylerkatz/monkcms-meta)
+[![Build Status](https://img.shields.io/travis/skylerkatz/monkcms-meta/master.svg?style=flat-square)](https://travis-ci.org/skylerkatz/monkcms-meta)
 [![Codecov](https://img.shields.io/codecov/c/github/skylerkatz/monkcms-meta.svg?style=flat-square)](https://codecov.io/gh/skylerkatz/monkcms-meta)
 [![StyleCI](https://styleci.io/repos/80335341/shield?branch=master)](https://styleci.io/repos/80335341)
 
