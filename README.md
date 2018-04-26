@@ -81,7 +81,7 @@ The following would be generated
 - Events
 
 ---
-Further documentation can be found at http://liftoff.ekklesia360.com or by looking at the tests.
+Further documentation can be found by looking at the tests.
 
 ## Contributing
 
