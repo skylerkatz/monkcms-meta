@@ -11,26 +11,14 @@ Overview
 
 ### Install
 
-Using [Composer](http://getcomposer.org), add `monkdev/monkcms` to your
-`composer.json`:
-
-```json
-{
-  "require": {
-    "monkcms/meta": "^0.1.0"
-  }
-}
-```
-
-```bash
-$ composer update
-```
-
-Or:
-
-```bash
-$ composer require monkcms/meta:~0.1
-```
+- [ ] Download the site you are working on to your local environment
+- [ ] If composer is not installed on your machine globall install it by following the directions here  [Composer - https://getcomposer.org/download](https://getcomposer.org/download)
+- [ ] In your terminal go to the directoy where the site was downloaded
+- [ ] If there is not a _composer.json_ file in the directory follow the indented steps below. If the file exists, head to the next step
+  - [ ] Run `composer init` and select the defaults for all of the main questions. You can select `N` for defining dependencies and dev dependencies
+- [ ] After a _composer.json_ file exists, run the following in the terminal `composer require monkcms/meta`
+- [ ] You will then upload the newly created _vendor_ directory as well as the _composer.json_ and _composer.lock_ files.
+- [ ] Follow the _How to use_ section below to implement it on the templates of your choosing.
 
 ### How to use
 
