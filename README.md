@@ -77,7 +77,7 @@ Thank you for considering contributing to the the MonkCMS Meta Package! Please o
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within this package, please send an e-mail to Skyler Katz at skyler@monkdevelopment.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to Skyler Katz at skylerkatz@hey.com. All security vulnerabilities will be promptly addressed.
 
 ## License
 
