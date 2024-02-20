@@ -44,9 +44,9 @@ class Meta
     /**
      * Create an HTML Meta tag.
      *
-     * @param string $name Name of the meta tag
+     * @param string $name    Name of the meta tag
      * @param string $content Content of the meta tag
-     * @param string $type The type of meta tag to generate
+     * @param string $type    The type of meta tag to generate
      *
      * @return string Fully formed meta tag
      */
