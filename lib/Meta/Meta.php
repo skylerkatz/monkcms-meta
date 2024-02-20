@@ -22,7 +22,7 @@ class Meta
      */
     protected function sanitize($content)
     {
-        return trim(htmlspecialchars($content));
+        return trim(htmlspecialchars(strip_tags($content)));
     }
 
     /**
@@ -64,7 +64,7 @@ class Meta
      *
      * @param array $meta Meta information for the givien module
      *
-     * @return string | empty       Meta tag for author property
+     * @return string | empty Meta tag for author property
      */
     private function generateAuthorTag($meta)
     {
