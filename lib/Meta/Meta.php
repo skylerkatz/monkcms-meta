@@ -22,7 +22,7 @@ class Meta
      */
     protected function sanitize($content)
     {
-        return trim(htmlspecialchars($content));
+        return trim(htmlspecialchars(strip_tags($content)));
     }
 
     /**
